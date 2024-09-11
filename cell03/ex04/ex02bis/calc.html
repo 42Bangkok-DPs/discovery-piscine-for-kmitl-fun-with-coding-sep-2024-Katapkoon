@@ -10,8 +10,17 @@
       integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
       crossorigin="anonymous"
     ></script>
-    <link href="calc.css" rel="stylesheet" />
-    <script src="calc.js"></script>
+    <style>
+      .container-fluid {
+      width: 100%;
+      display: flex;
+      }
+      .container {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+      }
+    </style>
   </head>
   <body>
     <div class="container-fluid">
@@ -33,6 +42,9 @@
     </div>
   </body>
   <script>
+    setInterval(function () {
+    alert("Please, use me...");
+    }, 30000);
     $("#target").submit((event) => {
       event.preventDefault();
       const num1 = parseFloat(event.target.num1.value);
@@ -59,7 +71,7 @@
       } else if (operator == "%") {
         ans = num1 % num2;
       }
-      if (isNaN(ans)) {
+      if (isNaN(ans) || !(isFinite(ans))) {
         console.log("It’s over 9000!");
         alert("It’s over 9000!");
       } else {
