@@ -11,8 +11,8 @@
   }, 30000);
   
   const calculate = () => {
-    const num1 = parseFloat(document.getElementById("num1").value);
-    const num2 = parseFloat(document.getElementById("num2").value);
+    const num1 = Number(document.getElementById("num1").value);
+    const num2 = Number(document.getElementById("num2").value);
     const operator = document.getElementById("operator").value;
     let ans = 0;
     if (isNaN(num1) || isNaN(num2)) {
